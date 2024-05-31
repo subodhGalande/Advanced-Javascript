@@ -5,7 +5,6 @@ class Book {
     this.year = year;
   }
 }
-
 class Ebook extends Book {
   constructor(title, author, year, fileSize) {
     super(title, author, year);
@@ -16,7 +15,5 @@ class Ebook extends Book {
     return `Title: ${this.title}  file-size: ${this.fileSize}MB`;
   }
 }
-
 const EBook = new Ebook("Mybook", "goku", 2012, 12);
-
 console.log(EBook.download());

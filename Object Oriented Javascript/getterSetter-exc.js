@@ -1,7 +1,7 @@
 class UserProfile {
   constructor(userName, email, birthdate) {
     if (userName.length === 0) {
-      console.log("cannot set empty string to username");
+      throw new Error(console.error("invalid name"));
     } else {
       this.userName = userName;
     }
@@ -9,13 +9,13 @@ class UserProfile {
     if (email.includes("@")) {
       this.email = email;
     } else {
-      console.log("enter a valid email address");
+      throw new Error(console.error("invalid email"));
     }
 
     let dateObj = new Date(birthdate);
     console.log(dateObj);
     if (isNaN(dateObj)) {
-      console.log("enter valid date in yyyy/mm/dd format");
+      throw new Error(console.error("invalid date"));
     } else {
       this.birthdate = birthdate;
     }
@@ -27,7 +27,7 @@ class UserProfile {
 
   set valName(name) {
     if (name.length === 0) {
-      console.log("cannot set empty string to username");
+      throw new Error(console.error("invalid name"));
     } else {
       this.userName = name;
     }
@@ -37,7 +37,7 @@ class UserProfile {
     if (emailaddr.includes("@")) {
       this.email = emailaddr;
     } else {
-      console.log("enter a valid email address");
+      throw new Error(console.error("invalid email"));
     }
   }
 
@@ -45,7 +45,7 @@ class UserProfile {
     let dateObj = new Date(newBirthdate);
     console.log(dateObj);
     if (isNaN(dateObj)) {
-      console.log("enter valid date in yyyy/mm/dd format");
+      throw new Error(console.error("invalid date"));
     } else {
       this.birthdate = newBirthdate;
     }
